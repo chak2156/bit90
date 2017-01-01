@@ -1,0 +1,47 @@
+package day17;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+public class Exam03 {
+	public static void main(String[] args) {
+		try {
+			searchEmployeeInfo("data/employee.txt", "김");
+			searchEmployeeInfo("data/employee.txt", "다");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 
+	 * @param readFileName
+	 *            : 읽을 파일명
+	 * @param lastName
+	 *            : 찾을 성씨
+	 * @throws Exception
+	 */
+	public static void searchEmployeeInfo(String readFileName, String lastName) throws Exception {
+    	BufferedReader br = new BufferedReader(new FileReader(readFileName));
+    	String s ="";
+    	int size=0;
+		String[] sarr= new String [100];
+		while (true) {
+			
+			s =br.readLine();
+			System.out.println(s);
+			if (s == null)
+				break;
+			sarr[size] = s;
+			System.out.println(sarr[size]);
+			size++;
+			
+		}
+//		for (int i = 0; i < sarr.length; i++) {
+//
+//			if (sarr[i].contains(lastName)) {
+//				System.out.println(sarr[i]);
+//			}
+//		}
+	}
+}

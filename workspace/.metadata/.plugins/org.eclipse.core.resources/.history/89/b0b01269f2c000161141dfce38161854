@@ -1,0 +1,39 @@
+package day07;
+
+public class Sub03 {
+	/*
+	 * add +
+	 * sub - 
+	 * mul *
+	 * div /
+	 */
+	
+	void method01(){
+	int a=3;
+	int b=5;
+	a=a+b;
+	System.out.println(a);
+	}
+
+	void method02(){
+	int a=3;
+	int b=5;
+	a=a-b;
+	System.out.println(a);
+	}
+
+	void method03(){
+	int a=3;
+	int b=5;
+	a=a*b;
+	System.out.println(a);
+	}
+
+	void method04(){
+	int a=3;
+	int b=5;
+	a=a/b;
+	System.out.println(a);
+	}
+
+}

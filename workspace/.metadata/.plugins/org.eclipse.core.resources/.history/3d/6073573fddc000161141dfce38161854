@@ -1,0 +1,16 @@
+package day07;
+import java.util.Random;
+public class Test01 {
+	public static void main(String[] args) {
+		Random r = new Random();
+		Sub01 s01 = new Sub01();
+		
+		s01.method01();		
+		s01.method02(3);//타입에 맞는 매개변수 값을 입력
+		s01.method03(0, 3);
+		s01.method04('s');
+		s01.method05("으앙");
+
+	}
+
+}

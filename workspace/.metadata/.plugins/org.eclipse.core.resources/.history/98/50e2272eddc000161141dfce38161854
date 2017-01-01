@@ -1,0 +1,13 @@
+package day07;
+
+public class Test01 {
+	public static void main(String[] args) {
+		
+		Sub01 s01 = new Sub01();
+		
+		s01.method01();		
+		s01.method02(3);//타입에 맞는 매개변수 값을 입력
+		s01.method03(0, 3);
+	}
+
+}

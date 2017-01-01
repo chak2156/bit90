@@ -1,0 +1,21 @@
+create table tb_text(
+	text_no		number(5)		not null,
+	title		varchar2(500)	not null,
+	content		varchar2(4000)	not null,
+	user_id		varchar2(16),
+	reg_time	date			not null,
+	read_count	number(5)		not null,
+	recom_count	number(5)		nut null,
+
+);
+
+create table tb_user(
+	user_id		varchar2(16)
+	password	varchar2
+	email		varchar2
+	
+);
+
+create table tb_read_recom(
+
+);

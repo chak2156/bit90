@@ -1,0 +1,58 @@
+day01
+FirstTest:클레스 생성,메인메소드,"test"출력
+
+day02
+ArgsTest:메인 메소드 아규먼트
+DataTypeTest:boolean,char,byte,short,int,long,float,double
+MainTest:public 과 static,그리고 []와 args는 서로 위치 변경 가능
+ParsIntTest:메인 아규먼트,형변환
+PrintTest:원하는 서식으로 숫자 출력
+VariableScopeTest:블락 사용법
+
+day02.quiz
+Quiz01:블럭 범위에 관한 퀴즈
+
+day03
+Test01:기본형에 대한 형변환 연습,업캐스팅과 다운캐스팅의 특징
+Test02:상수,문자열 상수 Final 키워드,큰따옴표와 역슬래시 출력하는법
+Test03:연산자. 3항연산자,산술연산자,증감연산자,비교연산자,논리연산자,배정연산자
+Test04:조건문 if
+Test05:스위치문
+Test06:Scanner ,close();
+Test07:Random 랜덤클래스 선언 밑 테스트
+
+day03.exam
+Exam01:캐릭터형 영문자의 아스키 코드값 출력
+Exam02:초를 받아 시분초로 변환//1차 멘붕
+Exam03:반지름 입력받아 지름구하기. 참조형->자료형 형변환. 
+Exam04:정수와 나눌 수를 입력받아 몫과 나머지 출력. 연산자 활용
+Exam05:나이를 입력받아 해당하는 나이의 입장료 출력. 조건문 활용
+Exam06:금액을 입력받아 금액당 해당하는 퍼센티지의 할인 적용. 조건문 활용
+Exam07:절대값 구하기
+Exam08:랜덤 점수 입력받아 합격 불합격 구분하기
+Exam09:코드의 간소화 과정. if else홀짝구분 , 중복되는 구문 빼내기, 삼항연산자로 줄이기
+Exam10:랜덤값 입력받아 재수강 구분하기. 논리연산자 활용
+
+day03.quiz
+Quiz01:입력한 돈에 따라 살 수 있는 물건 출력
+
+
+day04
+Test01:for문,삼항연산자
+Test02:for문 중첩. 별 피라미드 만들기
+Test03:break continue outer
+Test04:for문 while으로 바꾸기
+
+day04.exam
+LoofTest01:
+LoofTest02:
+LoofTest03:
+LoofTest04:
+LoofTest05:
+LoofTest06:
+LoofTest07:
+LoofTest08:
+LoofTest09:
+LoofTest10:
+LoofTest11:
+

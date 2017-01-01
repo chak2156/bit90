@@ -1,0 +1,41 @@
+
+import java.io.*;
+import java.util.Arrays;
+
+import javax.xml.transform.stax.StAXSource; 
+
+public class Exam01 { 
+
+    public static void dataCheck(String file1 , String file2) throws Exception{
+        // 구현하세요~ ---------------------------------------------------
+        // 비교 대상 파일인 file1 과 file2 에는 문자열 데이터의 라인수가 같다고 가정합니다~!!
+    	int i =1;
+    	String path ="data/data"+i+".txt";
+    	FileReader fr = new FileReader(path);
+    	i++;
+    	FileReader fr2 = new FileReader(path);
+		String sd = "";
+		String[] sarr = sd.split("\n\r");
+		while (true) {
+			Character ch = (char)fr.read();
+			sd=sd+ch.toString();
+//			System.out.println(ch);
+			sarr = sd.split("\n\r");
+			if(ch==((char)-1))break;
+		}
+		System.out.println(Arrays.toString(sarr));
+    	
+       	
+    	
+        // --------------------------------------------------------------
+    }   
+    
+    // main 메서드는 수정하지 마세요.
+    public static void main(String[] args) throws Exception {       
+        try {
+            dataCheck("data/data1.txt", "data/data2.txt");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }    
+}

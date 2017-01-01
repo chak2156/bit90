@@ -1,0 +1,64 @@
+-- 현재 사용자의 전체 테이블 목록 보기
+select *
+	from tab;
+	
+-- CREATE : 테이블 생성 
+-- 테이블명,컬럼명은 별도의 표시가 없으면 대문자로 관리된다
+--create table 테이블명(
+--컬럼명 타입(크기),
+--컬럼명 타입(크기)
+--);
+--create Member ->내부적으로 MEMBER
+--테이블명 규칙 -> t_옆에 붙이거나 또는 tb_,tc_,...
+--->
+---> 단어를 축약하여 사용할 경우 3~4자 사용
+
+--게시판을 표현하는 데이터 생성 스크립트 (SQL)사용하기
+
+--테이블 생성
+
+create table tb_board(
+no number(6),
+title varchar2(200),
+writer varchar2(200),
+content varchar2(10000),
+reg_date date
+);
+
+--테이블 삭제
+DROP TABLE TB_BOARD;
+
+PURGE RECYCLEBIN;//휴지통 비우기. 오라클 신버전에서 생긴 명령어
+SYSDATE // 현재 시간 정보를 반환하는 오라클 지원 함수
+--웹페이지에서 DB사용법
+--사용할 명령어 부분 드래그해서 블럭처리후 실행해야한다
+
+
+--제약조건 : 테이블레벨 제약조건, 컬럼레벨 제약조건 (따로 검색해볼것)
+--CONSTRAINT라는 키워드를 사용해 제약조건에 이름을 설정할 수 있음. 정의하지 않으면 시스템이 SYS로 시작하는 이름을 설정해줌
+--묵시적 작명규칙 : 제약타입_컬룸명
+--create table 테이블명(
+--컬럼명 타입(크기)컬럼레벨 제약조건,
+--컬럼명 타입(크기),
+--컬럼명 타입(크기)
+--테이블레벨 제약조건
+--);
+--제약조건 5가지
+--1. PK : Primary key //고유키. 하나의 테이블에 하나의 키가 존재해야 한다. UNIQUE + NOTNULL
+--2. UNIQUE //단일성 테이블 내에서 값이 고유해야 한다. (NULL 허용,중복 비허용)
+--3. NN : NOT NULL //무조건 값이 들어와야 함
+--4. FK : FOREIGN KEY //기본키. 다른 테이블 또는 자기 자신의 다른 컬럼의 값 참조
+--5. CK : CHECK // 값의 입력시 제약 설정. 남자만 된다 여자만 된다 등
+
+--DEFAULT : 값이 없을 경우 기본으로 값을 설정. NOT NULL하고 같이 사용할듯
+
+create table tb_board(
+no number(6) CONSTRAINT PK_NO PRIMARY KEY,
+title varchar2(200) NOT NULL,
+writer varchar2(30) NOT NULL,
+content varchar2(4000)NOT NULL,
+reg_date date DEFAULT SYSDATE
+);
+
+--테이블명 변경하기
+RENAME A(원래 테이블명) TO B(변경할 테이블명);

@@ -1,0 +1,19 @@
+package day04.exam;
+public class LoofTest08 {
+	public static void main(String[] args) {
+		boolean b = false;
+		int stack = 0;
+		System.out.println("dd");
+		for(int j=1;j<=100;j++){
+			System.out.println("dd");
+		for(int i=1;i<=j;i++){
+			System.out.println("dd");
+			if(num%i==0){stack++;}
+			
+			
+		}if(stack == 2)System.out.println(num);
+		}
+		System.out.println("dd");
+	}
+
+}

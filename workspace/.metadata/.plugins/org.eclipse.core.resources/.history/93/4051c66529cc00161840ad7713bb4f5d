@@ -1,0 +1,63 @@
+package day17;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+
+public class Exam04 {
+
+	String fName;
+	char comment;
+	String delm;
+	HashMap<String, String> map;
+
+	public Exam04(String fName) {
+
+		this.fName = fName;
+		this.comment = '#'; // 주석 구분자 # 기호.
+		this.delm = "=>"; // 서버 정보 구분자 = 기호.
+		map = new HashMap<>(); // 정보를 파싱하여 key, value 쌍으로 저장하기 위한 공간
+
+	}
+
+	public String getValue(String name) {
+		// 프로그램 구현 부분 ---------------------------
+		// 해쉬맵의 키에 해당하는 값을 리턴시키도록 구현.
+		// ---------------------------------------------------------
+
+		return this.map.get(name);
+	}
+
+	public void parse() throws IOException {
+
+		String s = "";
+		String[] sarr;
+		BufferedReader br = new BufferedReader(new FileReader(fName));
+		while (true) {
+			Character ch = comment;
+			s = br.readLine();
+			if(!s.startsWith(ch.toString())){
+				sarr=s.split("=>");
+				map.put(sarr[0],sarr[1]);
+//				System.out.println(sarr[0]+" "+sarr[1]);
+			}			
+			if(s == null)break;
+		}
+
+	}
+
+	public static void main(String args[]) { // 변경 하지 마세요.
+
+		Exam04 cr = new Exam04("data/myserver.txt");
+
+		try {
+			cr.parse();
+			System.out.println(cr.getValue("port"));
+			System.out.println(cr.getValue("server"));
+			System.out.println(cr.getValue("admin"));
+		} catch (Exception e) {
+		}
+
+	}
+}

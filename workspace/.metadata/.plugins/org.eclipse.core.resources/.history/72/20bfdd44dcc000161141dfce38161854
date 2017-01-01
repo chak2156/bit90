@@ -1,0 +1,16 @@
+package day07;
+
+public class Sub01 {
+	
+	//반환값과 매개변수가 없음
+	//void일 때는 값을 받을 수 없다
+	void method01(){
+		System.out.println("01");
+		
+	}
+	void method02(int i){
+		System.out.println("02");
+		
+	}
+
+}

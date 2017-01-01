@@ -1,0 +1,9 @@
+package day04.exam;
+import java.util.Random;
+public class LoofTest09 {
+	Random r = new Random();
+	
+	int num = r.nextInt(10)+10;
+	
+
+}

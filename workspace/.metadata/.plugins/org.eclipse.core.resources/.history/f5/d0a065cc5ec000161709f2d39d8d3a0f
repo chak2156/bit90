@@ -1,0 +1,94 @@
+package kr.co.mlec.board.test;
+
+import java.util.Scanner;
+
+public class BoardTestPr2 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		BoardVOPr[] board = new BoardVOPr[5];// 같은 패키지에 넣어서 임포트는 위에있는걸로 퉁침
+		int pos = 0;
+		int no = 0;
+
+		outer: while (true) {
+			int sel = 0;
+			System.out.println("-----------------");
+			System.out.println("1. 전체 게시물 조회");
+			System.out.println("2. 글번호 조회");
+			System.out.println("3. 글등록");
+			System.out.println("4. 글수정");
+			System.out.println("5. 글삭제");
+			System.out.println("0. 종료");
+			System.out.println("-----------------");
+			System.out.print("작업 선택: ");
+			sel = Integer.parseInt(sc.nextLine());
+			System.out.println("-----------------");
+
+			switch (sel) {
+			case 1:
+				System.out.println("-----------------");
+				System.out.println("1. 전체 게시물 조회");
+				System.out.println("-----------------");
+				System.out.printf("전체 게시물 : %d 개", pos);
+				if(pos==0)System.out.println("게시물이 등록되지 않았습니다");
+				for (int i=pos-1;i>=0;i--) {
+					System.out.printf("번호 : %d 제목 : %s 글쓴이 : %s \n", board[i].no, board[i].title, board[i].writer);
+				}
+				
+				System.out.println("-----------------");
+				break;
+			case 2:
+				int findNo = 0;
+				System.out.println("-----------------");
+				System.out.println("2. 글번호 조회");
+				System.out.println("-----------------");
+
+				System.out.println("-----------------");
+				break;
+			case 3:
+				no++;
+				board[pos] = new BoardVOPr();
+				System.out.println("-----------------");
+				System.out.println("3. 글등록");
+				System.out.println("-----------------");
+				System.out.print("제목 입력: ");
+				board[pos].title = sc.nextLine();
+				System.out.print("이름 입력: ");
+				board[pos].writer = sc.nextLine();
+				System.out.print("내용 입력: ");
+				board[pos].content = sc.nextLine();
+				pos++;
+				System.out.println("-----------------");
+				break;
+			case 4:
+
+				System.out.println("-----------------");
+				System.out.println("4. 글수정");
+				System.out.println("-----------------");
+
+				System.out.print("제목 입력: ");
+				board[pos].title = sc.nextLine();
+				System.out.print("이름 입력: ");
+				board[pos].writer = sc.nextLine();
+				System.out.print("내용 입력: ");
+				board[pos].content = sc.nextLine();
+				System.out.println("-----------------");
+				break;
+			case 5:
+				System.out.println("-----------------");
+				System.out.println("5. 글삭제");
+				System.out.println("-----------------");
+				System.out.println("-삭제-");
+				System.out.println("-----------------");
+				break;
+			case 0:
+				System.out.println("-----------------");
+				System.out.println("0. 종료");
+				System.out.println("-----------------");
+				System.out.println("종료합니다.");
+				System.out.println("-----------------");
+				break outer;
+			}
+		}
+
+	}
+}

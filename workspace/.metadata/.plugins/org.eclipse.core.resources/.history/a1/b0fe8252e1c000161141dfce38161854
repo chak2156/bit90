@@ -1,0 +1,15 @@
+package day07;
+
+public class Sub02 {
+	/*
+	 *반환타입이 void가 아니라면
+	 *1.반드시 매서드 내에 return이
+	 *2.return 
+	 */
+	
+	int method01(){
+		System.out.println();
+		return 100;
+	}
+
+}

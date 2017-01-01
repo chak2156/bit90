@@ -1,0 +1,86 @@
+package kr.co.mlec.board.test;
+
+import java.util.Scanner;
+
+public class BoardTest03 {
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		BoardVOPr2[] board = new BoardVOPr2[3];
+		int pos = 0;
+		int no = 0;
+		int sel = 0;
+
+		outer: while (true) {
+			System.out.println("-----------------");
+			System.out.println("1. 전체 게시물 조회");
+			System.out.println("2. 글번호 조회");
+			System.out.println("3. 글등록");
+			System.out.println("4. 글수정");
+			System.out.println("5. 글삭제");
+			System.out.println("0. 종료");
+			System.out.println("-----------------");
+			System.out.println("작업 입력");
+			sel = Integer.parseInt(sc.nextLine());
+
+			switch (sel) {
+			case 1:
+				System.out.println("-----------------");
+				System.out.println("1. 전체 게시물 조회");
+				System.out.println("-----------------");
+				System.out.println("-----------------");
+				break;
+			case 2:
+				System.out.println("-----------------");
+				System.out.println("2. 글번호 조회");
+				System.out.println("-----------------");
+				System.out.println("-----------------");
+				break;
+			case 3:
+				if (board.length == pos) {
+					BoardVOPr2[] temp = new BoardVOPr2[board.length * 2];
+					System.arraycopy(board, 0, temp, 0, pos);
+					board = temp;
+
+				}
+
+				System.out.println("-----------------");
+				System.out.println("3. 글등록");
+				System.out.println("-----------------");
+
+				no++;
+				board[pos].no = no;
+				board[pos] = new BoardVOPr2();
+				System.out.print("제목 입력: ");
+				board[pos].title = sc.nextLine();
+				System.out.print("이름 입력: ");
+				board[pos].writher = sc.nextLine();
+				System.out.print("내용 입력: ");
+				board[pos].contents = sc.nextLine();
+				pos++;
+
+				System.out.println("-----------------");
+				break;
+			case 4:
+				System.out.println("-----------------");
+				System.out.println("4. 글수정");
+				System.out.println("-----------------");
+				System.out.println("-----------------");
+				break;
+			case 5:
+				System.out.println("-----------------");
+				System.out.println("5. 글삭제");
+				System.out.println("-----------------");
+				System.out.println("-----------------");
+				break;
+			case 0:
+				System.out.println("-----------------");
+				System.out.println("0. 종료");
+				System.out.println("-----------------");
+				break outer;
+			}
+		}
+
+	}
+
+}

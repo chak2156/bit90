@@ -1,0 +1,10 @@
+package day07;
+
+public class Test02 {
+	public static void main(String[] args) {
+		Sub02 sub02 = new Sub02();
+		
+		sub02.method01();
+		
+	}
+}

@@ -1,0 +1,19 @@
+package day04.exam;
+
+public class LoofTest08 {
+	public static void main(String[] args) {
+		boolean b=true;
+		int s = 0;
+		for(int i=2;i<7;i++){
+			System.out.println("for "+b);
+			b=(7%i==0)?true:false;
+			System.out.println("for "+b);
+			if(b==true){break;}
+		
+		}
+		if(b==true)System.out.println("7");
+
+		
+	}
+
+}

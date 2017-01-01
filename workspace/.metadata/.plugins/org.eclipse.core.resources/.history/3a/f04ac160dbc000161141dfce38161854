@@ -1,0 +1,9 @@
+package day07;
+
+public class Sub01 {
+	void method01(){
+		System.out.println("01");
+		
+	}
+
+}

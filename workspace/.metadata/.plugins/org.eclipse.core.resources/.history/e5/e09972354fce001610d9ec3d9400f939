@@ -1,0 +1,170 @@
+----------------------------------
+join
+----------------------------------
+--cart
+
+
+
+
+
+from1 where2
+
+
+
+--equijoin 
+select last_name, department_name
+from employees, departments
+where employees.department_id = departments.department_id;
+
+--join시 컬럼에 그 컬럼이 어디있는지 명확하게 표시하기 위하여 앞에 테이블명을 . 구분자를 포함하여 붙여준다
+select employees.last_name, departments.department_name
+from employees, departments
+where employees.department_id = departments.department_id;
+
+--테이블 명은 보통 길이가 길어 테이블명에 alias를 준다. from절에서 줌
+select e.last_name, d.department_name
+from employees e, departments d
+where e.department_id = d.department_id;
+
+--부서의 정보 + 도시이름
+select d.* , l.city
+from departments d, locations l
+where d.location_id = l.location_id;
+
+--join이 아니어도 가능하지만 밑 예제의 경우 동일한 셀러리 컬럼이 두개가 생기므로 알리아스로 구분해준다
+select e.salary as sal, e.*
+from employees e;
+
+-- canada 에 근무하는 사원의 지역명, 부서명, 사원명을 출력하시오
+
+select l.city, d.department_name, e.last_name, c.country_name
+from employees e, locations l, departments d, countries c
+where d.location_id = l.location_id
+and e.department_id = d.department_id
+and l.country_id = c.country_id
+and c.country_name = 'Canada';
+
+--각 사원의 job_id 에 해당하는 최대 받을 수 있는 급여와 최소 급여가 얼마인지 출력하시오 
+select e.last_name, e.job_id, j.job_title, j.min_salary,j.max_salary
+from employees e,jobs j
+where e.job_id = j.job_id;
+
+
+--oracle 9i부터 지원
+--table1 inner join table2 on 증거조건
+select e.last_name, d.department_name
+from employees e 
+inner join departments d
+on e.department_id = d.department_id;
+
+select l.city, d.department_name, e.last_name, c.country_name
+from
+employees e
+inner join departments d
+on e.department_id = d.department_id
+inner join locations l
+on d.location_id = l.location_id
+inner join countries c
+on l.country_id = c.country_id
+where c.country_name = 'Canada';
+
+select e.last_name, e.job_id, j.job_title, j.min_salary,j.max_salary
+from employees e
+inner join jobs j
+on e.job_id = j.job_id;
+
+--non equi join
+select e.last_name, e.salary, s.grade
+from EMPLOYEES e, salgrade s
+where e.salary between s.min_sal and s.max_sal;
+
+select e.last_name, e.salary, s.grade
+from EMPLOYEES e
+inner join salgrade s
+on e.salary between s.min_sal and s.max_sal;
+
+--self join
+select e.employee_id, m.last_name
+from employees e,employees m
+where e.manager_id = m.employee_id;
+
+select e.employee_id, m.last_name
+from employees e
+inner join employees m
+on e.manager_id = m.employee_id;
+
+--outer join
+--[full] outer join //양쪽 다 체울 수 있는 조건
+--[right] outer join //왼쪽 체움
+--[left] outer join //오른쪽 체움
+--join+모자란 쪽에 추가하고 싶은걸 따로 추가해줌
+--(+) 널값추가..?
+select e.last_name, nvl(m.last_name,'관리자 없음')
+--select e.last_name, case when m.last_name is null then '관리자 없음' else to_char(m.last_name) end
+from employees e,employees m
+where e.manager_id = m.employee_id(+);
+
+select e.last_name, nvl(m.last_name,'관리자 없음')
+from employees e
+left outer join
+employees m
+on e.manager_id = m.employee_id;
+
+----------------------------------
+set 연산자 여러개의 sql문을 연결하여 조회
+----------------------------------
+--union 교집합 중복제거 자동 정렬 합집합
+--union all 교집합 중복제거 안함. 통계에서 여러 결과값을 하나로 합칠때 주로 사용했음. 소계를 낸다던지
+--intersect 교집합. 결과의 공통된 부분만 출력
+--minus 차집합. 앞에서 뒤를 뺀 결과를 반환
+
+--select절1
+--set	연산자1
+--select절2
+--set	연산자2
+--select절3
+--...
+--order by
+
+
+
+
+ select no,data
+ from tc_seta
+--union,union all,minus,intersect
+ intersect
+ select no,data
+ from tc_setb;
+ 
+--set 연산자를 사용할 때 컬럼의 갯수가 동일해야 한다.
+--같은 열에 있는 컬럼들은 연산자가 같아야 한다
+--order by는 셋절 마지막에만 쓸 수 있다
+--컬럼명은 첫번째 쿼리문의 컬럼명의 사용이 된다
+ select last_name,salary
+ from employees
+ union all
+ select department_id , department_name
+ from departments;
+ 
+--동일한 열의 위치데이터는 타입이 동일해야 한다.
+
+ 
+----------------------------------
+SubQuery
+----------------------------------
+
+--10번까지 사원의 평균급여
+select avg(salary)
+from employees
+where department_id = 10;
+
+--Chen 사원과 같은 부서에 있는 사원들의 평균 급여를 출력하시오
+
+select avg(salary)
+from employees
+where department_id = department_id;
+
+--Chan 사원의 부서번호를 출력하시오
+select department_id
+from employees
+where last_name = 'Chan';

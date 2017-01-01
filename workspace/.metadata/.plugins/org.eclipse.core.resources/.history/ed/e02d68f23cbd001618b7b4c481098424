@@ -1,0 +1,38 @@
+package day04.exam;
+
+import java.util.Random;
+
+public class LoofTest11 {
+	public static void main(String[] args) {
+
+		Random r = new Random();
+		for (int j = 1; j <= 5; j++) {
+			System.out.printf("Set %d: ", j);
+			int a=r.nextInt(45) + 1;
+			int b=r.nextInt(45) + 1;
+			int c=r.nextInt(45) + 1;
+			int d=r.nextInt(45) + 1;
+			int e=r.nextInt(45) + 1;
+			int f=r.nextInt(45) + 1;
+			
+			while(a==b){
+				a=r.nextInt(45) + 1;
+			}
+			while(a==c){
+				a=r.nextInt(45) + 1;
+			}
+			while(a==d){
+				a=r.nextInt(45) + 1;
+			}
+			while(a==e){
+				a=r.nextInt(45) + 1;
+			}
+			while(a==f){
+				a=r.nextInt(45) + 1;
+			}
+		
+			
+			System.out.printf("%d %d %d %d %d %d \n",a,b,c,d,e,f);
+		}
+	}
+}

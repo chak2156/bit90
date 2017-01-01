@@ -1,0 +1,23 @@
+package day04.exam;
+import java.util.Scanner;
+public class LoofTest08 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int num = Integer.parseInt(sc.nextLine());
+		boolean b = false;
+		int stack = 0;
+		System.out.println("dd");
+		for(int j=1;j<=100;j++){
+			System.out.println("dd");
+		for(int i=1;i<=j;i++){
+			System.out.println("dd");
+			b= (num%i==0)?true:false;
+			if (b=true) stack++;
+			if (stack == 2 )System.out.println(num);
+			
+		}
+		}
+		System.out.println("dd");
+	}
+
+}

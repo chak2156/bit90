@@ -1,0 +1,14 @@
+package day07;
+
+public class Test03 {
+	public static void main(String[] args) {
+		Sub03 s03 = new Sub03();
+		int a=3,b=2;
+		
+		s03.method01(a,b);
+		s03.method02(a,b);
+		s03.method03(a,b);
+		s03.method04(a,b);
+	}
+
+}

@@ -1,0 +1,13 @@
+package day07;
+
+public class Test01 {
+	public static void main(String[] args) {
+		
+		Sub01 s01 = new Sub01();
+		
+		s01.method01();
+		
+		
+	}
+
+}
